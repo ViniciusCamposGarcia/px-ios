@@ -326,9 +326,8 @@ extension PXBusinessResultViewModel: PXNewResultViewModelInterface {
     }
 
     func shouldShowPaymentMethod() -> Bool {
-        let bodyComponent = buildBodyComponent() as? PXBodyComponent
-        let hasBodyError = bodyComponent?.hasBodyError() ?? false
-        return !hasInstructions() && !hasBodyError
+        let isApproved = businessResult.isApproved()
+        return !hasInstructions() && isApproved
     }
 
     func getPaymentData() -> PXPaymentData? {

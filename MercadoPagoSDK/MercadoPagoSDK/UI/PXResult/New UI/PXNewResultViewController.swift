@@ -257,6 +257,11 @@ extension PXNewResultViewController {
             views.append(ResultViewData(view: receiptView, verticalMargin: 0, horizontalMargin: 0))
         }
 
+        //Error body View
+        if let errorBodyView = viewModel.getErrorBodyView() {
+            views.append(ResultViewData(view: errorBodyView, verticalMargin: 0, horizontalMargin: 0))
+        }
+
         //Payment Method View
         if viewModel.shouldShowPaymentMethod(), let PMView = buildPaymentMethodView() {
             views.append(ResultViewData(view: PMView, verticalMargin: 0, horizontalMargin: 0))
@@ -265,11 +270,6 @@ extension PXNewResultViewController {
         //Split Payment View
         if viewModel.shouldShowPaymentMethod(), let splitView = buildSplitPaymentMethodView() {
             views.append(ResultViewData(view: splitView, verticalMargin: 0, horizontalMargin: 0))
-        }
-
-        //Error body View
-        if let errorBodyView = viewModel.getErrorBodyView() {
-            views.append(ResultViewData(view: errorBodyView, verticalMargin: 0, horizontalMargin: 0))
         }
 
         //Bottom Custom View
