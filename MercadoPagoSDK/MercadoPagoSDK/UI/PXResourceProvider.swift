@@ -93,7 +93,7 @@ internal class PXResourceProvider {
     }
 
     static internal func getDescriptionForErrorBodyForREJECTED_CARD_HIGH_RISK() -> String {
-        let key = error_body_description_base + PXPayment.StatusDetails.REJECTED_CARD_HIGH_RISK
+        let key = error_body_description_base + PXPayment.StatusDetails.REJECTED_HIGH_RISK
         return key.localized_beta
     }
 

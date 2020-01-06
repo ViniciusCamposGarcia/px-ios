@@ -85,8 +85,6 @@ class PXErrorRenderer: NSObject {
 
         let screenWidth = PXLayout.getScreenWidth(applyingMarginFactor: CONTENT_WIDTH_PERCENT)
 
-        let height = UILabel.requiredHeight(forAttributedText: text, withFont: Utils.getFont(size: DESCRIPTION_FONT_SIZE), inWidth: screenWidth)
-        PXLayout.setHeight(owner: label, height: height).isActive = true
         PXLayout.matchWidth(ofView: label, toView: superView, withPercentage: CONTENT_WIDTH_PERCENT).isActive = true
         PXLayout.centerHorizontally(view: label, to: superView).isActive = true
         if let upperView = upperView {
