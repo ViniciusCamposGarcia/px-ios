@@ -87,6 +87,13 @@
 		<key>value</key>
 		<string>Como llegaste al límite de intentos con esta tarjeta, usa otro medio de pago.</string>
 	</dict>
+	<key>error_body_description_cc_rejected_other_reason</key>
+	<dict>
+		<key>comment</key>
+		<string></string>
+		<key>value</key>
+		<string>Por favor, tente pagar de outra forma.</string>
+	</dict>
 	<key>error_body_description_rejected_high_risk</key>
 	<dict>
 		<key>comment</key>
