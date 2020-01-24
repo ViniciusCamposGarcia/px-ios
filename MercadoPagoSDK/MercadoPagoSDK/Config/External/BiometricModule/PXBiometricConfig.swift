@@ -48,3 +48,24 @@ internal extension PXBiometricConfig {
         return defaultConfig
     }
 }
+
+/**
+Use this protocol to implement Biometric validation
+*/
+@objc public protocol PXBiometricProtocol: NSObjectProtocol {
+	func validate(config: PXBiometricConfig, onSuccess: @escaping () -> Void, onError: @escaping (Error) -> Void)
+	func isValidationRequired(config: PXBiometricConfig) -> Bool
+}
+
+/**
+Default PX implementation of Biometric for public distribution. (No-validation)
+*/
+final class PXBiometricDefault: NSObject, PXBiometricProtocol {
+	func validate(config: PXBiometricConfig, onSuccess: @escaping () -> Void, onError: (Error) -> Void) {
+		onSuccess()
+	}
+	
+	func isValidationRequired(config: PXBiometricConfig) -> Bool {
+		return false
+	}
+}
